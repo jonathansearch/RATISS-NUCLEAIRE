@@ -38,3 +38,18 @@ Scènes Three.js : télécharger + ouvrir avec Chrome (CDN bloqué en aperçu).
 ## Licence
 
 MIT.
+
+## Moteur unifié : NAVIER comprime -> FUSION brûle -> feu propulse (v0.1)
+
+`couple/moteur.py` : couplage 0D (splitting) entre SPH Navier (boîte L=4,
+forçage vortex) et bille D-T. Pression dynamique turbulente -> drive
+A=min(max(A_base.E/E_ref, plancher), max) ; E_fusion -> kick coeur fluide.
+Demo (n_nav=500, n_fus=300) : E 0->55, R 7.5->2.9µm, T->7keV, **28 fusions**,
+feedback +23% E. Sans forçage : 0 events (contrôle). Jouet assumé.
+
+```bash
+python3 demos/moteur.py   # run + figure 4 panneaux
+pytest tests/test_couple.py -q  # 3 tests (allume, éteint, feedback)
+```
+
+![moteur](demos/moteur.png)
