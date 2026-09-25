@@ -1,0 +1,8 @@
+[build-system]
+requires = ["setuptools"]
+[project]
+name = "ratiss-fusion"
+version = "0.1.0"
+dependencies = ["numpy>=1.24"]
+[tool.pytest.ini_options]
+testpaths = ["tests"]
