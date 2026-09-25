@@ -1,6 +1,6 @@
-"""Tests RATISS-FUSION : Bosch-Hale réel, froid=0 events, chaud=burn. MIT."""
+"""Tests RATISS-NUCLEAIRE v0.2 : v0.1 + depletion + alpha-transport + brem. MIT."""
 import sys
-sys.path.insert(0, '/home/user/RATISS-FUSION')
+sys.path.insert(0, '/home/user/RATISS-NUCLEAIRE')
 
 
 def test_bosch_hale_10kev():
@@ -27,3 +27,25 @@ def test_chaud_burn():
     s, pl = run(n=800, T_end=60e-12, A_imp=6e-10, Tkev=0.5, quiet=True)
     assert pl.events > 0, 'pas de fusion à chaud !'
     assert pl.E_out > 0
+
+
+def test_depletion_brule():
+    from fusion.run import run
+    s, pl = run(n=800, T_end=60e-12, A_imp=6e-10, Tkev=0.5, quiet=True)
+    assert pl.fuel_left() < 800, pl.fuel_left()  # du fuel a brule
+    assert pl.ash_count() >= 0
+
+
+def test_alpha_transport_pertes():
+    from fusion.run import run
+    s, pl = run(n=800, T_end=60e-12, A_imp=6e-10, Tkev=0.5, quiet=True)
+    assert pl.events > 0
+    assert pl.E_alpha_lost > 0, 'alpha jamais perdus ?!'
+    assert pl.E_alpha_dep > 0, 'alpha jamais deposes ?!'
+
+
+def test_brem_refroidit():
+    from fusion.run import run
+    s, pl = run(n=800, T_end=60e-12, A_imp=6e-10, Tkev=0.5, quiet=True)
+    assert pl.E_rad > 0, 'pas de rayonnement ?!'
+    assert pl.E_rad < pl.E_out, (pl.E_rad, pl.E_out)  # pertes << gain
