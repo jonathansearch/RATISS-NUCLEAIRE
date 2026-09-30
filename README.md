@@ -190,3 +190,16 @@ Conçu et mesuré par **RATISS LABS**, Douala 🇨🇲 — libre, reproductible,
 ## 📜 Licence
 
 MIT — voir [LICENSE](LICENSE). Copyright (c) 2026 Jonathan.
+
+
+## 🔗 Dépendances inter-dépôts
+
+Ce dépôt utilise : **RATISS-NAVIER (couplage turbulence, démos)**. Clone-les **côte à côte** dans le même dossier parent
+(`git clone https://github.com/jonathansearch/<DEPOT>.git`), ou pointe `RATISS_HOME` vers ce dossier parent :
+
+```bash
+export RATISS_HOME=/chemin/vers/le/dossier/des/depots
+pytest tests/ -q
+```
+
+Aucun chemin absolu n'est codé en dur (correctif de portabilité du 30/09/2026).

@@ -1,6 +1,8 @@
 """Démo moteur unifié : turbulence -> ignition -> feedback. PNG + JSON. MIT."""
+import os as _os, pathlib as _pl  # RATISS: chemins portables (dépôts clonés côte à côte, ou RATISS_HOME)
+_RATISS_HOME = _os.environ.get('RATISS_HOME') or str(_pl.Path(__file__).resolve().parents[2])
 import sys
-sys.path.insert(0, '/home/user/RATISS-NUCLEAIRE')
+sys.path.insert(0, (_RATISS_HOME + '/RATISS-NUCLEAIRE'))
 import json
 import numpy as np
 import matplotlib
@@ -8,7 +10,7 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from couple.moteur import run_couple
 
-D = '/home/user/RATISS-NUCLEAIRE/demos/'
+D = (_RATISS_HOME + '/RATISS-NUCLEAIRE/demos/')
 s, fl, pl = run_couple(n_nav=500, n_fus=300, quiet=False)
 s0, _, _ = run_couple(n_nav=500, n_fus=300, feedback=False, quiet=True)
 s = [p for p in s if 'R' in p]

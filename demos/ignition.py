@@ -1,11 +1,13 @@
 """Run ignition n=2000 + scène Three.js (D bleu, T rouge, fusions flash).
 Usage : python3 demos/ignition.py. MIT."""
+import os as _os, pathlib as _pl  # RATISS: chemins portables (dépôts clonés côte à côte, ou RATISS_HOME)
+_RATISS_HOME = _os.environ.get('RATISS_HOME') or str(_pl.Path(__file__).resolve().parents[2])
 import sys
-sys.path.insert(0, '/home/user/RATISS-NUCLEAIRE')
+sys.path.insert(0, (_RATISS_HOME + '/RATISS-NUCLEAIRE'))
 import json
 import numpy as np
 
-D = '/home/user/RATISS-NUCLEAIRE/demos/'
+D = (_RATISS_HOME + '/RATISS-NUCLEAIRE/demos/')
 from fusion.plasma import Plasma
 
 pl = Plasma(n=2000, Tkev=0.5)
@@ -35,7 +37,7 @@ print(f"[ignition] R={serie[-1]['R']}µm T={serie[-1]['T']}keV ev={pl.events} "
 
 data = json.dumps({'frames': snaps, 'flashes': flashes,
                    'serie': serie})
-html = open('/home/user/RATISS-NAVIER/scripts/make_three.py').read()
+html = open((_RATISS_HOME + '/RATISS-NAVIER/scripts/make_three.py')).read()
 start = html.index('html = """') + len('html = """')
 end = html.index(chr(34)*3 + chr(10) + "html = html.replace")
 tpl = html[start:end]

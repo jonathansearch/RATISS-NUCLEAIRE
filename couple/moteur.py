@@ -7,9 +7,11 @@ Couplage 0D (échange global, splitting d'opérateurs) :
   (r < 1.5), kick = sqrt(2.dE.G_c / (n_coeur.m_code)). Le feu POUSSE le fluide.
 Constantes jouet assumées : E_ref, A_base, A_max, G_c (cf README). MIT.
 """
+import os as _os, pathlib as _pl  # RATISS: chemins portables (dépôts clonés côte à côte, ou RATISS_HOME)
+_RATISS_HOME = _os.environ.get('RATISS_HOME') or str(_pl.Path(__file__).resolve().parents[2])
 import sys
-sys.path.insert(0, '/home/user/RATISS-NAVIER')
-sys.path.insert(0, '/home/user/RATISS-NUCLEAIRE')
+sys.path.insert(0, (_RATISS_HOME + '/RATISS-NAVIER'))
+sys.path.insert(0, (_RATISS_HOME + '/RATISS-NUCLEAIRE'))
 import numpy as np
 
 

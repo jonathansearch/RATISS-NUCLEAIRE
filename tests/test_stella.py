@@ -1,6 +1,8 @@
 """Tests stellaires : effondrement puis ignition-explosion. MIT."""
+import os as _os, pathlib as _pl  # RATISS: chemins portables (dépôts clonés côte à côte, ou RATISS_HOME)
+_RATISS_HOME = _os.environ.get('RATISS_HOME') or str(_pl.Path(__file__).resolve().parents[2])
 import sys
-sys.path.insert(0, '/home/user/RATISS-NUCLEAIRE')
+sys.path.insert(0, (_RATISS_HOME + '/RATISS-NUCLEAIRE'))
 
 
 def _run(n=500, T_end=200e-12, G=5e30):
