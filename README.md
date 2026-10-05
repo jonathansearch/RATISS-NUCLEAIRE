@@ -1,121 +1,121 @@
 <p align="center"><img src="images/logo-ratiss-labs.png" width="350" alt="RATISS LABS"/></p>
 
 <h1 align="center">RATISS-NUCLEAIRE</h1>
-<p align="center"><i>Fusion ICF v0.2 + stellaire + moteur unifié — du hot-spot à la supernova, <b>mesurés</b>.</i></p>
-<p align="center"><b>SANS NEURONES</b> — déplétion, transport α, gravité, couplage. 🌟</p>
+<p align="center"><i>ICF fusion v0.2 + stellar + unified engine — from hot-spot to supernova, <b>measured</b>.</i></p>
+<p align="center"><b>NO NEURONS</b> — depletion, α transport, gravity, coupling. 🌟</p>
 
 <p align="center">
 <img src="https://img.shields.io/badge/Tests-12%2F12-brightgreen.svg" alt="Tests"/>
 <img src="https://img.shields.io/badge/ICF-Q_pic_101-orange.svg" alt="ICF"/>
 <img src="https://img.shields.io/badge/Supernova-flash_173-red.svg" alt="Supernova"/>
-<img src="https://img.shields.io/badge/Moteur-coupl%C3%A9-blue.svg" alt="Moteur"/>
+<img src="https://img.shields.io/badge/Engine-coupled-blue.svg" alt="Engine"/>
 <img src="https://img.shields.io/badge/Licence-MIT-yellow.svg" alt="MIT"/>
 </p>
 
 <p align="center"><img src="images/hero-nucleaire.png" width="100%" alt="Supernova"/></p>
 
-> *« On a allumé une bille, puis une étoile, puis on a branché le vent sur le feu. »*
-> — le chef. (Et les trois ont un témoin qui dit zéro. 😇)
+> *"We lit a pellet, then a star, then we plugged the wind into the fire."*
+> — the chief. (And all three have a control that reads zero. 😇)
 
 ---
 
-## ⚡ En 30 secondes
+## ⚡ In 30 seconds
 
-| 🌟 | Front | Verdict mesuré |
+| 🌟 | Front | Measured verdict |
 |---|---|---|
-| ICF v0.2 | déplétion + α-transport + brem | R ×2.3, T 18.4 keV, **436 fusions**, Q pic **101** → 60 |
-| Stellaire | effondrement gravifique | R 14.9→5.3µm → **flash 173 ev** (161 keV) → explosion 141µm |
-| Moteur | NAVIER → FUSION → NAVIER | turbulence allume (**28 ev**), feu repousse (**+23%** E) |
+| ICF v0.2 | depletion + α-transport + brem | R ×2.3, T 18.4 keV, **436 fusions**, Q peak **101** → 60 |
+| Stellar | gravitational collapse | R 14.9→5.3µm → **flash 173 ev** (161 keV) → explosion 141µm |
+| Engine | NAVIER → FUSION → NAVIER | turbulence ignites (**28 ev**), fire pushes back (**+23%** E) |
 
-**Statut : 12/12 TESTS, 3 FRONTS OUVERTS.** Hérite de RATISS-FUSION v0.1 (import scellé).
+**Status: 12/12 TESTS, 3 FRONTS OPEN.** Inherits RATISS-FUSION v0.1 (sealed import).
 
 ---
 
-## 🗺️ Sommaire
+## 🗺️ Table of contents
 
-1. [Le concept](#concept) — 2. [Démarrage rapide](#quickstart) — 3. [Les salles du labo](#salles) — 4. [Les campagnes](#campagnes) — 5. [Chiffres-clés](#chiffres) — 6. [Exemples](#exemples) — 7. [La méthode](#methode) — 8. [Architecture](#archi) — 9. [Roadmap](#roadmap) — 10. [Arborescence](#arbo) — 11. [Crédits](#credits)
+1. [The concept](#concept) — 2. [Quick start](#quickstart) — 3. [The lab's rooms](#salles) — 4. [The campaigns](#campagnes) — 5. [Key numbers](#chiffres) — 6. [Examples](#exemples) — 7. [The method](#methode) — 8. [Architecture](#archi) — 9. [Roadmap](#roadmap) — 10. [Tree](#arbo) — 11. [Credits](#credits)
 
 ---
 
 <a id="concept"></a>
-## 1. 💡 Le concept
+## 1. 💡 The concept
 
-**Le constat** : v0.1 allumait (Q~87) mais brûlait sans compter son carburant, chauffait en local pur et ignorait le rayonnement. La v0.2 rend à César : **déplétion D/T** (le hot-spot s'auto-étouffe — burn-up réaliste), **transport α diffusif** (portée ~T²/n, échappement compté), **bremstrahlung** (≪ gain, prouvé). Puis le même moteur, avec la **gravité M_enc(r)**, effondre un nuage froid jusqu'au flash : une **supernova jouet**. Puis on boucle : la **turbulence NAVIER comprime**, la fusion brûle, le feu repousse — le **moteur unifié**.
+**The observation**: v0.1 ignited (Q~87) but burned without counting its fuel, heated in purely local fashion and ignored radiation. v0.2 gives back to Caesar: **D/T depletion** (the hot-spot self-smothers — realistic burn-up), **diffusive α transport** (range ~T²/n, escape counted), **bremstrahlung** (≪ gain, proven). Then the same engine, with **gravity M_enc(r)**, collapses a cold cloud down to the flash: a **toy supernova**. Then we close the loop: **NAVIER turbulence compresses**, fusion burns, the fire pushes back — the **unified engine**.
 
 ---
 
 <a id="quickstart"></a>
-## 2. 🚀 Démarrage rapide
+## 2. 🚀 Quick start
 
 ```bash
 git clone https://github.com/jonathansearch/RATISS-NUCLEAIRE.git
 cd RATISS-NUCLEAIRE
 pip install -e .
-pytest tests/ -q                # 12/12 : 7 fusion + 2 stellaires + 3 couplage
+pytest tests/ -q                # 12/12: 7 fusion + 2 stellar + 3 coupling
 python3 demos/ignition.py       # ICF v0.2 -> demos/ignition_3d.html
 python3 demos/stellar.py        # supernova -> demos/stellar_3d.html
-python3 demos/moteur.py         # moteur unifié -> demos/moteur.png
+python3 demos/moteur.py         # unified engine -> demos/moteur.png
 ```
 
-Scènes Three.js : télécharger + Chrome (CDN bloqué en aperçu).
+Three.js scenes: download + Chrome (CDN blocked in preview).
 
 ---
 
 <a id="salles"></a>
-## 3. 🏛️ Les salles du labo
+## 3. 🏛️ The lab's rooms
 
-| Salle | Dossier | Contenu |
+| Room | Folder | Content |
 |---|---|---|
 | ⚛️ Fusion | `fusion/` | plasma v0.2 + Bosch-Hale + run |
-| 🔗 Couplage | `couple/` | moteur unifié NAVIER↔FUSION |
-| 🎬 Démos | `demos/` | 3 runs + 2 scènes 3D + figures |
-| 🧪 Tests | `tests/` | 12 scellés |
-| 🖼️ Galerie | `images/` | logo + fresque supernova |
+| 🔗 Coupling | `couple/` | unified NAVIER↔FUSION engine |
+| 🎬 Demos | `demos/` | 3 runs + 2 3D scenes + figures |
+| 🧪 Tests | `tests/` | 12 sealed |
+| 🖼️ Gallery | `images/` | logo + supernova fresco |
 
 ---
 
 <a id="campagnes"></a>
-## 4. 🧪 Les campagnes (toutes, avec preuves)
+## 4. 🧪 The campaigns (all of them, with evidence)
 
-### ICF v0.2 — le feu qui compte son bois 🔥
-❓ Le burn tient-il avec déplétion + transport + brem ? 🔧 n=2000, drive 8e-10. 🏆 **436 fusions, T 18.4 keV, Q pic 101 → 60**. Le burn s'auto-étouffe par déplétion locale (hot-spot burn-up !) ; α perdus ≫ déposés à bas ρR (prouvé) ; brem ≪ gain (prouvé).
+### ICF v0.2 — the fire that counts its wood 🔥
+❓ Does the burn hold with depletion + transport + brem? 🔧 n=2000, drive 8e-10. 🏆 **436 fusions, T 18.4 keV, Q peak 101 → 60**. The burn self-smothers by local depletion (hot-spot burn-up!); lost α ≫ deposited at low ρR (proven); brem ≪ gain (proven).
 
 <img src="demos/ignition_v02.png" width="100%" alt="ICF v0.2"/>
 
-### Stellaire — naissance et mort d'une étoile en 60 ps 🌟
-❓ Un nuage froid peut-il s'effondrer, flasher, exploser ? 🔧 n=1500, T=0.1 keV, G_eff renormalisé (assumé). 🏆 **R 14.9→5.3µm, T 0.2→16 keV → FLASH 173 fusions (T=161 keV) → explosion 141µm**. Effondrement → Ignition → Explosion. Q = 2.9.
+### Stellar — birth and death of a star in 60 ps 🌟
+❓ Can a cold cloud collapse, flash, explode? 🔧 n=1500, T=0.1 keV, renormalized G_eff (owned). 🏆 **R 14.9→5.3µm, T 0.2→16 keV → FLASH 173 fusions (T=161 keV) → explosion 141µm**. Collapse → Ignition → Explosion. Q = 2.9.
 
 <img src="demos/stellar.png" width="100%" alt="Supernova"/>
 
-### Moteur unifié — le vent allume le feu 🔗
-❓ La turbulence peut-elle comprimer jusqu'au burn, et le burn repousser ? 🔧 SPH NAVIER (forçage) + bille D-T, couplage 0D. 🏆 **28 fusions, feedback +23% E**. Sans forçage : **0 events** — le calme n'allume pas.
+### Unified engine — the wind lights the fire 🔗
+❓ Can turbulence compress up to burn, and the burn push back? 🔧 SPH NAVIER (forcing) + D-T pellet, 0D coupling. 🏆 **28 fusions, feedback +23% E**. Without forcing: **0 events** — calm does not ignite.
 
-<img src="demos/moteur.png" width="100%" alt="Moteur unifié"/>
+<img src="demos/moteur.png" width="100%" alt="Unified engine"/>
 
 ---
 
 <a id="chiffres"></a>
-## 5. 📊 Chiffres-clés
+## 5. 📊 Key numbers
 
-| Front | Mesure | Valeur | Témoin |
+| Front | Measurement | Value | Control |
 |---|---|---|---|
-| ICF v0.2 | R / T / fusions / Q | ×2.3 / 18.4 keV / 436 / pic 101 → 60 | froid : 0 ev |
-| Stellaire | collapse / flash / explosion | ×2.8 / 173 ev à 161 keV / 141µm | G=0 : dispersion |
-| Moteur | fusions / feedback | 28 / +23% E | sans forçage : 0 ev |
+| ICF v0.2 | R / T / fusions / Q | ×2.3 / 18.4 keV / 436 / peak 101 → 60 | cold: 0 ev |
+| Stellar | collapse / flash / explosion | ×2.8 / 173 ev at 161 keV / 141µm | G=0: dispersion |
+| Engine | fusions / feedback | 28 / +23% E | without forcing: 0 ev |
 
 ---
 
 <a id="exemples"></a>
-## 6. 💻 Exemples
+## 6. 💻 Examples
 
-**Ex. 1 — Run ICF v0.2 :**
+**Ex. 1 — ICF v0.2 run:**
 ```python
 from fusion.run import run
 s, pl = run(n=2000, T_end=80e-12, A_imp=8e-10)
-print(pl.events, pl.fuel_left(), pl.E_rad)  # burn, fuel restant, brem
+print(pl.events, pl.fuel_left(), pl.E_rad)  # burn, fuel left, brem
 ```
 
-**Ex. 2 — Moteur unifié :**
+**Ex. 2 — Unified engine:**
 ```python
 from couple.moteur import run_couple
 s, fl, pl = run_couple(n_nav=500, n_fus=300)
@@ -124,9 +124,9 @@ s, fl, pl = run_couple(n_nav=500, n_fus=300)
 ---
 
 <a id="methode"></a>
-## 7. ⚖️ La méthode
+## 7. ⚖️ The method
 
-**Cinétique macro assumée** (1 événement = w paires — testé : sans boost, 0 events même à C=3.3, T=31 keV ; le jouet ρR~1e-10 est à 1e10 du NIF — écrit dans le README, pas caché). **Gravité renormalisée assumée** (G_eff pour t_ff ~ ps — écrit dans le code). Chaque témoin dit zéro. Les NOMBRES sont du jouet ; les FILMS (burn-up, flash, feedback) sont la physique.
+**Macro kinetics owned** (1 event = w pairs — tested: without boost, 0 events even at C=3.3, T=31 keV; the toy ρR~1e-10 is 1e10 away from the NIF — written in the README, not hidden). **Renormalized gravity owned** (G_eff for t_ff ~ ps — written in the code). Every control reads zero. The NUMBERS are toy; the MOVIES (burn-up, flash, feedback) are the physics.
 
 ---
 
@@ -136,16 +136,16 @@ s, fl, pl = run_couple(n_nav=500, n_fus=300)
 ```mermaid
 flowchart TB
     subgraph ICF[ICF v0.2]
-        D[Drive] --> P[Plasma D-T]
-        P --> DP[Depletion fuel→cendre]
-        P --> AT[Alpha local+transport+pertes]
+        D[Drive] --> P[D-T Plasma]
+        P --> DP[Depletion fuel→ash]
+        P --> AT[Alpha local+transport+losses]
         P --> BR[Bremstrahlung]
     end
-    subgraph ST[Stellaire]
-        G[Gravite M_enc] --> P
+    subgraph ST[Stellar]
+        G[Gravity M_enc] --> P
         P --> SN[Flash → explosion]
     end
-    subgraph MO[Moteur]
+    subgraph MO[Engine]
         N[NAVIER E_turb] --> D
         P --> F[Feedback +23%]
         F --> N
@@ -157,49 +157,49 @@ flowchart TB
 <a id="roadmap"></a>
 ## 9. 🗺️ Roadmap
 
-1. 🎯 **v0.3** : compression ×10 (vrai ρR, cinétique honnête sans boost ?)
-2. ⚛️ **Transport α complet** : Fokker-Planck au lieu du proxy
-3. 📰 **Publication** : l'article du moteur unifié (chef seul décide)
+1. 🎯 **v0.3**: ×10 compression (real ρR, honest kinetics without boost?)
+2. ⚛️ **Complete α transport**: Fokker-Planck instead of the proxy
+3. 📰 **Publication**: the unified-engine paper (chief alone decides)
 
 ---
 
 <a id="arbo"></a>
-## 10. 📁 Arborescence
+## 10. 📁 Tree
 
 ```
 RATISS-NUCLEAIRE/
-├── README.md            # ← vous êtes ici
+├── README.md            # ← you are here
 ├── LICENSE              # MIT
 ├── pyproject.toml
 ├── fusion/              # plasma v0.2 + bosch_hale + run
-├── couple/              # moteur unifié
+├── couple/              # unified engine
 ├── demos/               # ignition + stellar + moteur (+ 3D)
-├── tests/               # 12 scellés
-└── images/              # logo + fresque
+├── tests/               # 12 sealed
+└── images/              # logo + fresco
 ```
 
 ---
 
 <a id="credits"></a>
-## 11. 🖖 Crédits
+## 11. 🖖 Credits
 
-Conçu et mesuré par **RATISS LABS**, Douala 🇨🇲 — libre, reproductible, sans neurones.
+Designed and measured by **RATISS LABS**, Douala 🇨🇲 — free, reproducible, no neurons.
 
 <p align="center"><img src="images/lab-ratiss.png" width="100%" alt="RATISS LABS"/></p>
 
-## 📜 Licence
+## 📜 License
 
-MIT — voir [LICENSE](LICENSE). Copyright (c) 2026 Jonathan.
+MIT — see [LICENSE](LICENSE). Copyright (c) 2026 Jonathan.
 
 
-## 🔗 Dépendances inter-dépôts
+## 🔗 Cross-repository dependencies
 
-Ce dépôt utilise : **RATISS-NAVIER (couplage turbulence, démos)**. Clone-les **côte à côte** dans le même dossier parent
-(`git clone https://github.com/jonathansearch/<DEPOT>.git`), ou pointe `RATISS_HOME` vers ce dossier parent :
+This repository uses: **RATISS-NAVIER (turbulence coupling, demos)**. Clone it **side by side** in the same parent folder
+(`git clone https://github.com/jonathansearch/<REPO>.git`), or point `RATISS_HOME` to that parent folder:
 
 ```bash
-export RATISS_HOME=/chemin/vers/le/dossier/des/depots
+export RATISS_HOME=/path/to/the/folder/of/the/repos
 pytest tests/ -q
 ```
 
-Aucun chemin absolu n'est codé en dur (correctif de portabilité du 30/09/2026).
+No absolute path is hardcoded (portability fix of 09/30/2026).
