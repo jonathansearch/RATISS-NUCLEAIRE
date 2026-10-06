@@ -9,7 +9,7 @@
 <img src="https://img.shields.io/badge/ICF-Q_pic_101-orange.svg" alt="ICF"/>
 <img src="https://img.shields.io/badge/Supernova-flash_173-red.svg" alt="Supernova"/>
 <img src="https://img.shields.io/badge/Engine-coupled-blue.svg" alt="Engine"/>
-<img src="https://img.shields.io/badge/Licence-MIT-yellow.svg" alt="MIT"/>
+<img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT"/>
 </p>
 
 <p align="center"><img src="images/hero-nucleaire.png" width="100%" alt="Supernova"/></p>
